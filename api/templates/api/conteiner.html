@@ -1,0 +1,31 @@
+{% extends "api/index.html" %}
+{% block main %}
+<div class="container">
+    <!-- <img src="../static/logo.png" alt="Este seria un logo" class="logo"> -->
+    <h2>Carga de archivos</h2>
+
+    <form action="/procesing" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+            <h3>Hola Usuario !</h3>
+            <h3>{{ action }}</h3>
+        </div>
+        
+        <div class="form-group">
+            <h3>Tipo de archivo</h3>
+            <!-- El analisis de texto se puede realizar sobre tetxto desde el clipboard o desde archivo .txt -->
+            <label for="kmlFile">KML - Google Maps</label>
+            <input type="radio" name="fileType" value="texto" id="kmlFile" checked="checked">
+            <br />
+            <label for="oscFile">OSM (OSC) - Open Street Maps</label>
+            <input type="radio" name="fileType" value="archivo" id="oscFile">
+        </div>
+        <label for="selecArch">Seleccionar archivo ...</label>
+        <input type="file" name="file" id="selecArch" class="custom-file-input">
+
+        <input type="submit" value="Aceptar" class="btn" />
+
+    </form>    
+</div>
+
+{% endblock %}
