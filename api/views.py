@@ -34,7 +34,13 @@ def procesing(request):
     #schema = request.schema
     if request.method == 'POST':
         form = UploadFileForm(request.POST, request.FILES)
-        fileRequest = request.FILES['file']
+        try:
+            fileRequest = request.FILES['file']
+        except :
+            action = 'No se selecciono archivo'
+            template = loader.get_template('api/conteiner.html')
+            return HttpResponse(template.render({'action': action}))
+
         action = False
         actionDetails = {
             'name':fileRequest.name,
