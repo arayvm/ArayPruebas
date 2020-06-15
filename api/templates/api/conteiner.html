@@ -1,4 +1,5 @@
 {% extends "api/index.html" %}
+{% load static %}
 {% block main %}
 <div class="container">
     <!-- <img src="../static/logo.png" alt="Este seria un logo" class="logo"> -->
@@ -9,6 +10,8 @@
         <div class="form-group">
             <h3>¡ Welcome !</h3>
             <h5>Este sitio se encuentra en contruccion <br /> Al momento solo estamos procesando arhivos KML</h5>
+            <h4>Este trabajo es una colaboracion de Podemos Aprendes <a href="http://www.podemosaprender.org/"><img src="{% static 'api/avatar-icon.png' %}" style="height:60px;width:60px;"></a></h4>
+
         </div>
         
         <div class="form-group">

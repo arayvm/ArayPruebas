@@ -12,13 +12,13 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 
-runRemote = True
+runRemote = False
 
 if runRemote:
     import django_heroku
     SECRET_KEY = os.environ.get('GEOMELT_KEY')
 else:
-    SECRET_KEY = ''
+    SECRET_KEY = 'x1@0^)0i-8ku^wf*vhgo35^376jk!1#w5b767m1szo%nm#r-(#'
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
