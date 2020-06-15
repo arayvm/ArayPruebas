@@ -24,7 +24,7 @@ def index(request):
 def load(request):
     template = loader.get_template('api/conteiner.html')
     action = {'action': 'load'}
-    return HttpResponse(template.render(action, request))
+    return HttpResponse(template.render({'action':action}, request))
 
 
 
@@ -37,10 +37,7 @@ def procesing(request):
         try:
             fileRequest = request.FILES['file']
         except :
-            action = 'No se selecciono archivo'
-            template = loader.get_template('api/conteiner.html')
-            return HttpResponse(template.render({'action': action}))
-
+            return HttpResponse(template.render({'action': 'No se recibio archivo'}, request))
         action = False
         actionDetails = {
             'name':fileRequest.name,
