@@ -11,7 +11,14 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-import django_heroku
+
+runRemote = False
+
+if runRemote:
+    import django_heroku
+    SECRET_KEY = os.environ.get('GEOMELT_KEY')
+else:
+    SECRET_KEY = 'x1@0^)0i-8ku^wf*vhgo35^376jk!1#w5b767m1szo%nm#r-(#'
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,9 +27,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('GEOMELT_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -122,5 +126,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# Activate Django-Heroku.
-django_heroku.settings(locals())
+if runRemote:
+    # Activate Django-Heroku.
+    django_heroku.settings(locals())

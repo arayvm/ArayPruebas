@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader, RequestContext
 from .forms import UploadFileForm
-from .extraccionKml import extraccionKml
+from .extraccionKml import extraction
 # from .extraccion import testFunc
 
 def index(request):
@@ -47,10 +47,11 @@ def procesing(request):
             'meta': request.META,
             'headers': request.headers,
             'readed': request.FILES['file'].read(),
-            'typeRead':type(request.FILES['file'].read())
+            'typeRead': type(request.FILES['file'].read()),
+            'choiceFile': request.POST['fileType']
         }
         if not action:
-            action = {extraccionKml(actionDetails['readed'], filename=actionDetails['name'])}
+            action = {extraction(actionDetails['readed'],  filename=actionDetails['name'], validExt=actionDetails['choiceFile'])}
     return HttpResponse(template.render({'action':action}))
 
 '''
