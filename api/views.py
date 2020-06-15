@@ -24,7 +24,7 @@ def index(request):
 def load(request):
     template = loader.get_template('api/conteiner.html')
     action = {'action': 'load'}
-    return HttpResponse(template.render({'action':action}, request))
+    return HttpResponse(template.render(action, request))
 
 
 
