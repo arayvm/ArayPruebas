@@ -23,7 +23,7 @@ runRemote = True
 
 if runRemote:
     import django_heroku
-    SECRET_KEY = env('GEOMELT_KEY')
+    SECRET_KEY = os.environ.get('GEOMELT_KEY', env('GEOMELT_KEY'))
 else:
     SECRET_KEY = ''
 
