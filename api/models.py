@@ -1,6 +1,47 @@
 from django.db import models
+from .services.xml_extension import XMLExtensions
+
+# Create your models here.
+class MyFile:
+    def __init__(self, content_type: str, encoding: str, fileObj: object):
+        self.name = fileObj.name
+        self.content = fileObj.read()
+        self.declaredType = content_type
+        self.declaredEncoding = encoding
+
+    def validateFile(self) -> bool:
+        def not_empty(xml_file: bytes) -> bool:
+            try:
+                return len(xml_file) > 1
+            except TypeError:
+                return False
+
+        def validate_file_extension(xml_file_name: str) -> bool:
+            try:
+                str(xml_file_name)
+            except AttributeError:
+                return False
+            extension = xml_file_name.split('.')[-1].strip()
+            if not (extension == XMLExtensions.kml):
+                return False
+            else:
+                return True
+
+        if not not_empty(self.content):
+            return False
+        if not validate_file_extension(self.name):
+            return False
+
+        return True
 
 
+
+
+
+
+
+
+# esquema de base de datos
 class Folder(models.Model):
     name = models.TextField(max_length=120, default='default')
 
