@@ -56,19 +56,3 @@ def procesing(request):
         if not action:
             action = {extraction(actionDetails['readed'],  filename=actionDetails['name'], validExt=actionDetails['choiceFile'])}
     return HttpResponse(template.render({'action':action}))
-
-'''
-def procesing(request):
-    template = loader.get_template('api/prosesing.html')
-    if request.method == 'POST':
-        form = UploadFileForm(request.POST, request.FILES)
-        # fileType = form.fileType
-        action = {'name': request.FILES['file'].name, 'attrs':request.POST['fileType']}
-        if form.is_valid():
-            # handle_uploaded_file(request.FILES['file'])
-            return HttpResponse(template.render(action, request))
-    else:
-        form = UploadFileForm()
-        action = {'name': 'Error en la carga del archivo'}
-    return HttpResponse(template.render(action, request))
-'''
