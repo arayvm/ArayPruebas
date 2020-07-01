@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        div {
+            align-content: center;
+            text-align: center;
+            margin: 2rem;
+            width: 100%;
+        }
+        #atributos {
+            font-family: sans-serif;
+            }
+
+            #atributos td, #atributos th {
+            border: 1px solid #ddd;
+            padding: 8px;
+            }
+
+            #atributos tr:nth-child(even){background-color: #f2f2f2;}
+
+            #atributos tr:hover {background-color: #ddd;}
+
+            #atributos th {
+            text-align: left;
+            background-color: #4CAF50;
+            color: white;
+            }
+    </style>
+    <title>Geo Melt</title>
+</head>
+<body>
+ <div>
+     <p>Welcome to the paradise of georeferenced data</p>
+     <h2>Geo Melt</h2>
+     <p>Geo Melt is an API that allow users to extract and transform data</p>
+     <p>comming from sources like Kml of Google Maps, or such kind of file</p>
+     <p>We can extract data from geojson files as well.</p>
+ </div>
+    {% if action.Status == 'Initialize' %}
+        <div>
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <label for="selecArch">SELECCIONAR ARCHIVO</label>
+                <input type="file" name="file" id="file" />
+                <input type="submit" value="LOAD" />
+            </form>
+        </div>
+    {% endif %}
+    {% if action.Status == 'Received' %}
+        <div>ARCHIVO SUBIDO</div>
+        <div>
+            <table id='atributos'>
+                {% for a , b in action.items %}
+                <tr>
+                    <td>{{ a }}</td>
+                    <td>{{ b }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    {% endif %}
+</body>
+</html>
