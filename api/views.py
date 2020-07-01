@@ -30,11 +30,11 @@ def home(request):
             action.update({'Validated Content':'Passed'})
 
         action.update({
-            'Name': validate._name,
+            'Name': validate.name,
             'Encoding': request.POST.encoding,
             'Content type': request.content_type,
-            'Validated Extension': validate._extension,
-            'Content length': validate._length,
+            'Validated Extension': validate.extension,
+            'Content length': validate.length,
             })
 
     return HttpResponse(template.render({'action':action}, request))

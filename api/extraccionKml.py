@@ -54,7 +54,7 @@ def fileCheckListValidation(file, filename, validExt):
         return {'status': False, 'error': 'Library parse error (xml format - structure)'}
     return {'status': True}
 
-
+#Seria objeto escribir
 def convertToJson(data):
     try:
         # # <--------- TENGO QUE DECODIFICAR ANTES DE GUARDAR A LA BD ESTO DEBE CAMBIARSE --------->
@@ -63,7 +63,7 @@ def convertToJson(data):
     except:
         return False
 
-
+# objeto extraer
 def xmlKmlParser(file):
     xmlFile = ET.fromstring(file.decode())
     prefix = "http://www.opengis.net/kml/2.2"
