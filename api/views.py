@@ -13,7 +13,7 @@ def api(request):
     Estableces el codiogo de respuesta necesario -> recurso no encontrado
     '''
     template = loader.get_template('api/api.html')
-    action = {'Status':'Received', 'req': request.META}
+    action = {'Status':'Initialized', 'req': request.META}
     return HttpResponse(template.render({'action': action}, request))
 
 
