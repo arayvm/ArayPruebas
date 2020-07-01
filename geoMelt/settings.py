@@ -15,7 +15,7 @@ SECRET_KEY = os.environ.get('GEOMELT_KEY', env('GEOMELT_KEY'))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['0.0.0.0']
 

@@ -5,6 +5,17 @@ from .forms import UploadFileForm
 from .extraccionKml import extraction
 from api.services.validation_services import XMLValidationService
 
+def api(request):
+    '''
+    :param request: key autentication
+    :return: api response
+    Este seria el end point de entrada para la api con auntenticacion
+    Estableces el codiogo de respuesta necesario -> recurso no encontrado
+    '''
+    template = loader.get_template('api/api.html')
+    action = {'Status':'Received', 'req': request.META}
+    return HttpResponse(template.render({'action': action}, request))
+
 
 def home(request):
     template = loader.get_template('api/home.html')
@@ -30,11 +41,11 @@ def home(request):
             action.update({'Validated Content':'Passed'})
 
         action.update({
-            'Name': validate._name,
+            'Name': validate.name,
             'Encoding': request.POST.encoding,
             'Content type': request.content_type,
-            'Validated Extension': validate._extension,
-            'Content length': validate._length,
+            'Validated Extension': validate.extension,
+            'Content length': validate.length,
             })
 
     return HttpResponse(template.render({'action':action}, request))
