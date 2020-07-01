@@ -32,10 +32,25 @@
     <title>Geo Melt</title>
 </head>
 <body>
- <div>
-     <p>Geo Melt - Nothing here yet!</p>
-     <p> =/ </p>
+    <div>
+        <p>Geo Melt - Nothing here yet!</p>
+        <p> =/ </p>
+    </div>
 
- </div>
+    <div>
+    {% if action.Status == 'Received' %}
+    <p>Request Description</p>
+    <div>
+        <table id='atributos'>
+            {% for a , b in action.req.items %}
+            <tr>
+                <td>{{ a }}</td>
+                <td>{{ b }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    {% endif %}
+    </div>
 </body>
 </html>

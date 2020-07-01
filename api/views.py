@@ -7,13 +7,14 @@ from api.services.validation_services import XMLValidationService
 
 def api(request):
     '''
-    :param reques: key autentication
+    :param request: key autentication
     :return: api response
     Este seria el end point de entrada para la api con auntenticacion
     Estableces el codiogo de respuesta necesario -> recurso no encontrado
     '''
     template = loader.get_template('api/api.html')
-    return HttpResponse(template.render({'action': 'api'}, request))
+    action = {'Status':'Received', 'req': request.META}
+    return HttpResponse(template.render({'action': action}, request))
 
 
 def home(request):
