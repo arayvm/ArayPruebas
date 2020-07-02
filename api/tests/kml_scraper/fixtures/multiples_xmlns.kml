@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>multipolygon_with_linestring_overlaping</name>
+	<Style id="poly-673AB7-1200-77-nodesc-highlight">
+		<BalloonStyle>
+			<text><![CDATA[<h3>$[name]</h3>]]></text>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ffb73a67</color>
+			<width>1.8</width>
+		</LineStyle>
+		<PolyStyle>
+			<color>4db73a67</color>
+		</PolyStyle>
+	</Style>
+	<Style id="line-817717-1200-nodesc-normal">
+		<BalloonStyle>
+			<text><![CDATA[<h3>$[name]</h3>]]></text>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff177781</color>
+			<width>1.2</width>
+		</LineStyle>
+	</Style>
+	<StyleMap id="poly-673AB7-1200-77-nodesc">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#poly-673AB7-1200-77-nodesc-normal</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#poly-673AB7-1200-77-nodesc-highlight</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="poly-673AB7-1200-77-nodesc-normal">
+		<BalloonStyle>
+			<text><![CDATA[<h3>$[name]</h3>]]></text>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ffb73a67</color>
+			<width>1.2</width>
+		</LineStyle>
+		<PolyStyle>
+			<color>4db73a67</color>
+		</PolyStyle>
+	</Style>
+	<StyleMap id="line-817717-1200-nodesc">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#line-817717-1200-nodesc-normal</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#line-817717-1200-nodesc-highlight</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="line-817717-1200-nodesc-highlight">
+		<BalloonStyle>
+			<text><![CDATA[<h3>$[name]</h3>]]></text>
+		</BalloonStyle>
+		<LineStyle>
+			<color>ff177781</color>
+			<width>1.8</width>
+		</LineStyle>
+	</Style>
+	<Folder>
+		<name>multipolygon_with_overlaping_linestring</name>
+		<Placemark>
+			<name>shape_one</name>
+			<styleUrl>#poly-673AB7-1200-77-nodesc</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<tessellate>1</tessellate>
+						<coordinates>
+							-72.4044454,-40.1054701,0 -72.40472440000001,-40.1066517,0 -72.400465,-40.107259,0 -72.4002397,-40.1061266,0 -72.4044454,-40.1054701,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>shape_two</name>
+			<styleUrl>#poly-673AB7-1200-77-nodesc</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<tessellate>1</tessellate>
+						<coordinates>
+							-72.4041927,-40.104313,0 -72.3999226,-40.1049695,0 -72.39966510000001,-40.1035826,0 -72.4039674,-40.103,0 -72.4041927,-40.104313,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>shape_three</name>
+			<styleUrl>#poly-673AB7-1200-77-nodesc</styleUrl>
+			<Polygon>
+				<outerBoundaryIs>
+					<LinearRing>
+						<tessellate>1</tessellate>
+						<coordinates>
+							-72.403903,-40.1026861,0 -72.4036241,-40.101291,0 -72.40604879999999,-40.1009791,0 -72.4061561,-40.1010776,0 -72.4063706,-40.1013813,0 -72.4064994,-40.1016192,0 -72.40641359999999,-40.1018654,0 -72.40620970000001,-40.1021445,0 -72.4058557,-40.1024153,0 -72.403903,-40.1026861,0 
+						</coordinates>
+					</LinearRing>
+				</outerBoundaryIs>
+			</Polygon>
+		</Placemark>
+		<Placemark>
+			<name>line_one</name>
+			<styleUrl>#line-817717-1200-nodesc</styleUrl>
+			<LineString>
+				<tessellate>1</tessellate>
+				<coordinates>
+					-72.4062526,-40.1007493,0 -72.4008989,-40.1028502,0 -72.4015212,-40.1075113,0 
+				</coordinates>
+			</LineString>
+		</Placemark>
+	</Folder>
+</Document>
+</kml>

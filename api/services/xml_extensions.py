@@ -2,5 +2,7 @@ from enum import Enum
 
 
 class XMLExtensions(Enum):
-    kml = 'kml'
+    kml = '.kml'
+    osc = '.osc'
+    geojson = ''
     
