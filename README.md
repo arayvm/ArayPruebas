@@ -8,4 +8,13 @@ https://www.facebook.com/groups/PodemosAprender/
 
 >GeoMelt es un proyecto que se propone unir la brecha de compatibilidad entre sistemas que procesan informacion georeferenciada. Pudiendo asi intercambiar datos entre las diferentes plataformas de visualizacion y edicion de mapas como Google Maps, Open Street Maps, MapBox, Leaflet, etc.
 
+La primera version, aun con detalles, del servicio de extraccion de datos se puede encontrar aqui:
+
+http://geomelt.herokuapp.com/
+
+Por el momento soporta la subidad de archivos tipo KML y devuelve un Json. Tenga en cuenta que estamos realizando las primeras pruebas.
+
+Por cualquier consulta o sugerencia puede escribirnos a nclsarzani@gmail.com
+
+
 
